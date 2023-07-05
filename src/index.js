@@ -1,12 +1,12 @@
 const fs = require('fs')
 const path = require('path')
-class DirWebpackPlugin {
+class MkdirWebpackPlugin {
   constructor (options) {
     this.options = options
   }
 
   apply (compiler) {
-    compiler.hooks.emit.tap('DirWebpackPlugin', (compilation) => {
+    compiler.hooks.emit.tap('MkdirWebpackPlugin', (compilation) => {
       console.log('creat directions:', this.options.dirs)
       const root = compilation.options.output.path
       this.options.dirs.map((dir) => {
@@ -28,4 +28,4 @@ class DirWebpackPlugin {
   }
 }
 
-module.exports = DirWebpackPlugin
+module.exports = MkdirWebpackPlugin
