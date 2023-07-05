@@ -1,0 +1,30 @@
+{
+  "name": "mkdir-webpack-plugin",
+  "version": "0.0.1",
+  "description": "webpack plugin to make directory",
+  "main": "dist/mkdir-webpack-plugin.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuzhi1900/mkdir-webpack-plugin"
+  },
+  "keywords": [
+    "mkdir",
+    "webpack",
+    "plugin"
+  ],
+  "author": "Bert Huang",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
