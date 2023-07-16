@@ -15,8 +15,8 @@ module.exports = {
   },
   mode: 'production',
   plugins: [
-    new MkdirWebpackPlugin({
-      dirs: []
-    })
+    new MkdirWebpackPlugin(
+      []
+    )
   ]
 }

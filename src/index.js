@@ -2,14 +2,29 @@ const fs = require('fs')
 const path = require('path')
 class MkdirWebpackPlugin {
   constructor (options) {
-    this.options = options
+    if (!options) {
+      this.options = options
+      return
+    }
+    // is Array
+    if (Array.isArray(options)) {
+      this.options = options
+      return
+    }
+    // is Object
+    if (Object.prototype.toString.call(options) === '[object Object]' && !options.dirs) {
+      this.options = options.dirs
+    }
   }
 
   apply (compiler) {
     compiler.hooks.emit.tap('MkdirWebpackPlugin', (compilation) => {
-      console.log('creat directions:', this.options.dirs)
+      if (!this.options) {
+        return
+      }
+      console.log('creat directions:', this.options)
       const root = compilation.options.output.path
-      this.options.dirs.map((dir) => {
+      this.options.map((dir) => {
         const distDir = path.join(root, dir)
         return this.mkdirSync(distDir)
       })

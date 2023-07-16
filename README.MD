@@ -20,6 +20,19 @@ This plugin will make directories inside webpack's `output.path` directory
 `npm install --save-dev mkdir-webpack-plugin`
 
 ## Usage
+```js
+const MkdirWebpackPlugin = require('mkdir-webpack-plugin');
+
+const webpackConfig = {
+    plugins: [
+        new MkdirWebpackPlugin(
+            ['logs','tmp/files'] // Array of directories
+        )
+    ]
+};
+
+module.exports = webpackConfig;
+```
 
 ```js
 const MkdirWebpackPlugin = require('mkdir-webpack-plugin');
@@ -27,10 +40,12 @@ const MkdirWebpackPlugin = require('mkdir-webpack-plugin');
 const webpackConfig = {
     plugins: [
         new MkdirWebpackPlugin({
-            dirs: ['logs','tmp/files']
+            dirs: ['logs','tmp/files'] // Object of directories, key names dirs
         })
     ]
 };
 
 module.exports = webpackConfig;
 ```
+
+
